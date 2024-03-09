@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.HomeFragment"
+        android:name="com.example.ivan_kovalenko_practicapmdm.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/likedFragment"
-        android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.LikedFragment"
+        android:name="com.example.ivan_kovalenko_practicapmdm.view.LikedFragment"
         android:label="fragment_liked"
         tools:layout="@layout/fragment_liked" />
     <fragment
         android:id="@+id/readedFragment"
-        android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.ReadedFragment"
+        android:name="com.example.ivan_kovalenko_practicapmdm.view.ReadedFragment"
         android:label="fragment_readed"
         tools:layout="@layout/fragment_readed" />
 </navigation>

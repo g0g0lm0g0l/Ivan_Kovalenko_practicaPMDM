@@ -1,4 +1,4 @@
-package com.example.ivan_kovalenko_practicapmdm.viewmodel
+package com.example.ivan_kovalenko_practicapmdm.view
 
 import androidx.fragment.app.Fragment
 import android.os.Bundle
