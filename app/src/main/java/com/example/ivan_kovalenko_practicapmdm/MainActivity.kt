@@ -1,5 +1,6 @@
 package com.example.ivan_kovalenko_practicapmdm
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,14 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment)
         findViewById<BottomNavigationView>(R.id.bottom_navigation_view).setupWithNavController(navController)
 
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder
+            .setMessage("Welcome. Input information please")
+            .setTitle("Bienvenido")
+
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

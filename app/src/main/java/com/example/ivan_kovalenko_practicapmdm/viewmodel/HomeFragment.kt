@@ -25,21 +25,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Aquí se accede a los EditTexts a través del binding
         binding.apply {
-            // Asignar el clic de un botón o cualquier otro evento para realizar la navegación
             buttonNavigate.setOnClickListener {
-                // Obtener el texto ingresado en los EditTexts
                 val nombre = textViewNombre.text.toString()
                 val apellidos = textViewApellidos.text.toString()
 
-                // Crear un Bundle para pasar los argumentos al siguiente fragmento
                 val bundle = Bundle().apply {
                     putString("nombre", nombre)
                     putString("apellidos", apellidos)
                 }
 
-                // Navegar al siguiente fragmento con los argumentos
                 findNavController().navigate(R.id.readedFragment, bundle)
             }
         }
