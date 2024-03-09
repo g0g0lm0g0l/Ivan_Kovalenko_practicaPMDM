@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Inicio"
+        android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/likedFragment"
+        android:title="Liked"
+        android:icon="@drawable/ic_liked" />
+    <item
+        android:id="@+id/readedFragment"
+        android:title="Readed"
+        android:icon="@drawable/ic_readed" />
+</menu>
