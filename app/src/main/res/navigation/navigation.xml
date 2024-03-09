@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment2_to_readedFragment2"
-            app:destination="@id/readedFragment2" />
+            android:id="@+id/action_homeFragment_to_readedFragment"
+            app:destination="@id/readedFragment" />
         <action
-            android:id="@+id/action_homeFragment2_to_likedFragment2"
-            app:destination="@id/likedFragment2" />
+            android:id="@+id/action_homeFragment_to_likedFragment"
+            app:destination="@id/likedFragment" />
     </fragment>
     <fragment
-        android:id="@+id/likedFragment2"
+        android:id="@+id/likedFragment"
         android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.LikedFragment"
         android:label="fragment_liked"
         tools:layout="@layout/fragment_liked" />
     <fragment
-        android:id="@+id/readedFragment2"
+        android:id="@+id/readedFragment"
         android:name="com.example.ivan_kovalenko_practicapmdm.viewmodel.ReadedFragment"
         android:label="fragment_readed"
         tools:layout="@layout/fragment_readed" />
