@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
                     putString("apellidos", apellidos)
                 }
 
-                findNavController().navigate(R.id.readedFragment, bundle)
+                findNavController().navigate(R.id.infoFragment, bundle)
             }
         }
     }

@@ -1,12 +1,11 @@
 package com.example.ivan_kovalenko_practicapmdm.view
 
-import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.ivan_kovalenko_practicapmdm.databinding.FragmentReadedBinding
-
 
 class ReadedFragment : Fragment() {
 
@@ -24,16 +23,8 @@ class ReadedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Obtener los datos pasados desde el fragmento anterior
-        val arguments = requireArguments()
-        val nombre = arguments.getString("nombre")
-        val apellidos = arguments.getString("apellidos")
-
-        // Mostrar los datos en los TextViews
-        binding.apply {
-            textViewNombre.text = nombre
-            textViewApellidos.text = apellidos
-        }
+        // No se necesitan argumentos, solo establecer el texto del TextView
+        binding.textViewFragmentNameInfo.text = "Esto es el fragment_readed.xml"
     }
 
     override fun onDestroyView() {
