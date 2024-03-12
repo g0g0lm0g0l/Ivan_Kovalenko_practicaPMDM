@@ -12,8 +12,4 @@
         android:id="@+id/readedFragment"
         android:title="Readed"
         android:icon="@drawable/ic_readed" />
-    <item
-    android:id="@+id/infoFragment"
-    android:title="Info"
-    android:icon="@drawable/ic_info" />
 </menu>

@@ -25,24 +25,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.apply {
-            buttonNavigate.setOnClickListener {
-                val nombre = textViewNombre.text.toString()
-                val apellidos = textViewApellidos.text.toString()
 
-                val bundle = Bundle().apply {
-                    putString("nombre", nombre)
-                    putString("apellidos", apellidos)
-                }
 
-                findNavController().navigate(R.id.infoFragment, bundle)
-            }
-        }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
-
