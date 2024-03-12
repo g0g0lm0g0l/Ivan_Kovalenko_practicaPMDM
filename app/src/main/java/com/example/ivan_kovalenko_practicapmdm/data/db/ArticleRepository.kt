@@ -11,7 +11,6 @@ class ArticleRepository(private val articleDao: ArticleDao) {
 
     val allReadArticles: Flow<List<Article>> = articleDao.getAllReadArticles()
 
-
     suspend fun insert(article: Article) {
         articleDao.insert(article)
     }
