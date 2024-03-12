@@ -3,7 +3,9 @@ package com.example.ivan_kovalenko_practicapmdm.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -31,11 +33,23 @@ class ArticleAdapter : ListAdapter<Article, ArticleViewHolder>(WORDS_COMPARATOR)
         private val contentTextView: TextView = itemView.findViewById(R.id.textViewContent)
         //private val urlTextView: TextView = itemView.findViewById(R.id.textViewUrl)
 
+        private val imageViewLike: ImageView = itemView.findViewById(R.id.imageViewLike)
+        private val imageViewRead: ImageView = itemView.findViewById(R.id.imageViewRead)
+
+
         fun bind(article: Article) {
             titleTextView.text = article.title
           //  authorTextView.text = article.author
             contentTextView.text = article.content
          //   urlTextView.text = article.url
+
+            imageViewLike.setOnClickListener {
+                Toast.makeText(itemView.context, "Me gusta: ${article.title}", Toast.LENGTH_SHORT).show()
+            }
+            imageViewRead.setOnClickListener {
+                Toast.makeText(itemView.context, "Leído: ${article.title}", Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         companion object {
