@@ -7,6 +7,7 @@ import com.example.ivan_kovalenko_practicapmdm.data.db.ArticleRepository
 import com.example.ivan_kovalenko_practicapmdm.data.db.model.Article
 
 class ReadViewModel(private val repository: ArticleRepository) : ViewModel() {
+
     val allReadArticles: LiveData<List<Article>> = repository.allReadArticles.asLiveData()
 
     suspend fun update(article: Article) {
