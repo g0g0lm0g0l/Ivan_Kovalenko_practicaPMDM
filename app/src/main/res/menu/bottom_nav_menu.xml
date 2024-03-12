@@ -11,5 +11,5 @@
     <item
         android:id="@+id/readedFragment"
         android:title="Readed"
-        android:icon="@drawable/ic_readed" />
+        android:icon="@drawable/ic_read" />
 </menu>

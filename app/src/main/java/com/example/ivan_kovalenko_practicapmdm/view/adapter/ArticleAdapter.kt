@@ -18,14 +18,24 @@ class ArticleAdapter : ListAdapter<Article, ArticleViewHolder>(WORDS_COMPARATOR)
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.title)
+        holder.bind(current)
+    }
+
+    override fun getItemCount(): Int {
+        return currentList.size
     }
 
     class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val wordItemView: TextView = itemView.findViewById(R.id.textViewTitle)
+        private val titleTextView: TextView = itemView.findViewById(R.id.textViewTitle)
+        //private val authorTextView: TextView = itemView.findViewById(R.id.textViewAuthor)
+        private val contentTextView: TextView = itemView.findViewById(R.id.textViewContent)
+        //private val urlTextView: TextView = itemView.findViewById(R.id.textViewUrl)
 
-        fun bind(text: String?) {
-            wordItemView.text = text
+        fun bind(article: Article) {
+            titleTextView.text = article.title
+          //  authorTextView.text = article.author
+            contentTextView.text = article.content
+         //   urlTextView.text = article.url
         }
 
         companion object {
@@ -36,6 +46,7 @@ class ArticleAdapter : ListAdapter<Article, ArticleViewHolder>(WORDS_COMPARATOR)
             }
         }
     }
+
     companion object {
         private val WORDS_COMPARATOR = object : DiffUtil.ItemCallback<Article>() {
             override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
