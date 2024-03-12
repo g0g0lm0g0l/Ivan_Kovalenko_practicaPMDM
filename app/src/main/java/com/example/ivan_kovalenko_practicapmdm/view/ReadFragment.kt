@@ -1,10 +1,12 @@
 package com.example.ivan_kovalenko_practicapmdm.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +17,7 @@ import com.example.ivan_kovalenko_practicapmdm.R
 import com.example.ivan_kovalenko_practicapmdm.databinding.FragmentReadBinding
 import com.example.ivan_kovalenko_practicapmdm.view.adapter.ArticleAdapter
 import com.example.ivan_kovalenko_practicapmdm.viewmodel.ReadViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class ReadFragment : Fragment() {
@@ -31,6 +34,22 @@ class ReadFragment : Fragment() {
     ): View {
         _binding = FragmentReadBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        binding.textViewFragmentNameInfo.text = "Hola de Ivan"
+
+        binding.buttonExp.setOnClickListener {
+            Toast.makeText(context, "Botón buttonExp presionado", Toast.LENGTH_SHORT).show()
+        }
+        binding.buttonImp.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+
+            intent.type = "text/plain"
+
+            intent.putExtra(Intent.EXTRA_TEXT, "Hola mundo")
+
+            startActivity(Intent.createChooser(intent, "Compartir mensaje a través de:"))
+            Snackbar.make(binding.root, "Botón buttonImp presionado", Snackbar.LENGTH_SHORT).show()
+        }
 
         // Initialize RecyclerView and Adapter
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerNewsRead)
@@ -59,11 +78,6 @@ class ReadFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.textViewFragmentNameInfo.text = "Hola de Ivan"
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
