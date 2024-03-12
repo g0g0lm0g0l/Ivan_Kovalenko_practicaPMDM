@@ -21,8 +21,8 @@ data class Article(
 
     val urlToImage: String?,
 
-    val isRead: Boolean? = false,
+    var isRead: Boolean? = false,
 
-    val isFav: Boolean? = false
+    var isFav: Boolean? = false
 
 )

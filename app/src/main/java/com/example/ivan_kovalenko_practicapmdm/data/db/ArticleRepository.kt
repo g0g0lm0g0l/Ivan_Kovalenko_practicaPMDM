@@ -15,8 +15,12 @@ class ArticleRepository(private val articleDao: ArticleDao) {
     suspend fun insert(article: Article) {
         articleDao.insert(article)
     }
+
     suspend fun insertAll(articles: List<Article>) {
         articleDao.insertAll(articles)
     }
 
+    suspend fun update(article: Article) {
+        articleDao.updateArticle(article)
+    }
 }

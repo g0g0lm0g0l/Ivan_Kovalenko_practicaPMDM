@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.example.ivan_kovalenko_practicapmdm.data.db.model.Article
 import kotlinx.coroutines.flow.Flow
 
@@ -16,8 +17,8 @@ interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(articles: List<Article>)
 
-    @Query("UPDATE articles SET isFav = 1 WHERE id = :id")
-    fun updateArticle(id: Int)
+    @Update
+    suspend fun updateArticle(article: Article)
 
     @Query("SELECT * FROM articles WHERE id = :id")
     fun getUpdatedArticle(id: Int): Flow<Article?>
@@ -31,7 +32,6 @@ interface ArticleDao {
 
     @Query("SELECT * FROM articles WHERE isRead = 1")
     fun getAllReadArticles(): Flow<List<Article>>
-
 
 
 }

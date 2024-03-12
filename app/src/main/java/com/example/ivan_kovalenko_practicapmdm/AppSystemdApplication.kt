@@ -3,8 +3,6 @@ package com.example.ivan_kovalenko_practicapmdm
 import android.app.Application
 import com.example.ivan_kovalenko_practicapmdm.data.db.ArticleRepository
 import com.example.ivan_kovalenko_practicapmdm.data.db.ArticlesDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
 
 class AppSystemdApplication : Application() {
 

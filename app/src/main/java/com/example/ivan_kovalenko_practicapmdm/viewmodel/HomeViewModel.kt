@@ -22,4 +22,8 @@ class HomeViewModel(private val repository: ArticleRepository) : ViewModel() {
     fun insertAll(articles: List<Article>) = viewModelScope.launch {
         repository.insertAll(articles)
     }
+
+    suspend fun update(article: Article) {
+        repository.update(article)
+    }
 }
