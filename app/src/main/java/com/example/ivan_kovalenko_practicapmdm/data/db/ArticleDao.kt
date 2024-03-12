@@ -10,6 +10,18 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ArticleDao {
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(article: Article)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertAll(articles: List<Article>)
+
+    @Query("UPDATE articles SET isFav = 1 WHERE id = :id")
+    fun updateArticle(id: Int)
+
+    @Query("SELECT * FROM articles WHERE id = :id")
+    fun getUpdatedArticle(id: Int): Flow<Article?>
+
     // The flow always holds/caches latest version of data. Notifies its observers when the data has changed.
     @Query("SELECT * FROM articles")
     fun getAllArticles(): Flow<List<Article>>
@@ -21,9 +33,5 @@ interface ArticleDao {
     fun getAllReadArticles(): Flow<List<Article>>
 
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(article: Article)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAll(articles: List<Article>)
 }

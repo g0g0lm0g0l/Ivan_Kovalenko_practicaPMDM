@@ -20,15 +20,9 @@
 
     <fragment
         android:id="@+id/readedFragment"
-        android:name="com.example.ivan_kovalenko_practicapmdm.view.ReadedFragment"
+        android:name="com.example.ivan_kovalenko_practicapmdm.view.ReadFragment"
         android:label="fragment_readed"
-        tools:layout="@layout/fragment_readed" >
+        tools:layout="@layout/fragment_read" >
     </fragment>
 
-    <fragment
-        android:id="@+id/infoFragment"
-        android:name="com.example.ivan_kovalenko_practicapmdm.view.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" >
-    </fragment>
 </navigation>
